@@ -14,10 +14,10 @@ class QuantityTshirt extends Model
     }
 
     public function color() {
-        return $this->hasMany('App\Color');
+        return $this->belongsTo('App\Color');
     }
 
     public function preview() {
-        return $this->hasMany('App\TshirtsPreview');
+        return $this->belongsTo('App\TshirtsPreview', 'tshirts_preview_id');
     }
 }

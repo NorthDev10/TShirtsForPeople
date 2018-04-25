@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Tshirt;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => '/v1.0', 'middleware' => 'api'], function () {
+    Route::resource('tshirts', 'TshirtController',
+    ['names' =>
+        [
+            'index' => 'tshirt.index',
+        //    'create' => 'admin.main-articles.create',
+        //    'store' => 'admin.main-articles.store',
+        //    'show' => 'admin.main-articles.show',
+        //    'edit' => 'admin.main-articles.edit',
+        //    'update' => 'admin.main-articles.update',
+        //    'destroy' => 'admin.main-articles.destroy',
+        ]
+    ]);
 });
