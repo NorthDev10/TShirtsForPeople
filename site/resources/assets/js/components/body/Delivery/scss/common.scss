@@ -1,0 +1,43 @@
+.contacts {
+  box-shadow: 0 0 3px grey;
+  padding: 8px;
+  margin-bottom: 12px;
+  text-align: left;
+
+  .row > div {
+    padding-bottom: 10px;
+  }
+
+  input[type=text] {
+    width: 250px;
+  }
+
+  h2, h3 {
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    color: #2d2d2d;
+  }
+  
+  h3 {
+    color: grey;
+  }
+  
+  h2, a {
+    padding: 12px 0;
+    color: #2d2d2d;
+  }
+  
+  p {
+    margin-bottom: 4px;
+  }
+
+  .txt-align {
+    text-align: center;
+  }
+
+  .txt-right {
+    text-align: right;
+  }
+}

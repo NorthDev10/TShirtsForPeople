@@ -1,0 +1,132 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,700&amp;subset=cyrillic");
+
+* {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  letter-spacing: 1px;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+html, body {
+  min-width: 340px;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .content {
+    flex: 1 0 auto;
+
+    #splash-screen {
+      position: absolute;
+      width: 100%;
+      top: 7%;
+      z-index: -1;
+
+      @media screen and (max-width: 960px) {
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.button {
+  border: 0;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.orange {
+  background: #ffce83;
+
+  &:hover {
+    background: #ff9a00;
+  }
+
+  &:active {
+    background: #d27e00;
+  }
+}
+
+.active-orange-btn {
+  background: #ff9a00;
+}
+
+.green {
+  background: #00aa5b;
+  color: #fff;
+
+  &:hover {
+    background: #00c167;
+  }
+
+  &:active {
+    background: #01753f;
+  }
+}
+
+.blue {
+  background: #1E88E5;
+  color: #fff;
+
+  &:hover {
+    background: #2196F3;
+  }
+
+  &:active {
+    background: #1565C0;
+  }
+}
+
+.gray, .gray:hover, .gray:active {
+  background: rgb(196, 195, 195);
+  color: black;
+}
+
+.input-text {
+  border: 0;
+  background: #ffce83;
+  font-size: 1.2em;
+  padding: 5px;
+
+  &:focus {
+    background: #ff9a00;
+  }
+
+  &::-webkit-input-placeholder {
+    color: white;
+    opacity: .7;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.is-danger {
+  color: #ff9a00;
+  font-weight: bold;
+}

@@ -23,20 +23,21 @@ class Tshirt extends Model
         return $this->hasMany('App\QuantityTshirt');
     }
 
+    public function colors() {
+        return $this->belongsToMany('App\Color', 'quantity_tshirts')->groupBy('id');
+    }
+
+    public function previews() {
+        return $this->belongsToMany('App\TshirtsPreview', 'quantity_tshirts')->groupBy('id');
+    }
+
     public static function filter(Request $request)
     {
-        $Tshirt = DB::table('tshirts')
-            ->select('tshirts.*', 'colors.name_en AS colors_name_en',
-                'colors.name_uk AS colors_name_uk', 'colors.code AS colors_code', 
-                'colors.id AS color_id', 'tp.images', 
-                'brands.name AS brands_name', 'qt.size')
-            ->join('brands', 'brands.id', '=', 'tshirts.brand_id')
-            ->join('quantity_tshirts AS qt', function ($join) {
-                $join->on('qt.tshirt_id', '=', 'tshirts.id')
-                     ->where('qt.quantity', '>', 0);
-            })
-            ->join('tshirts_preview AS tp', 'tp.id', '=', 'qt.tshirts_preview_id')
-            ->join('colors', 'colors.id', '=', 'qt.color_id');
+        $Tshirt = Tshirt::query();
+        $Tshirt->with('brand', 'quantity', 'previews', 'colors');
+        $Tshirt->whereHas('quantity', function ($query) {
+            $query->where('quantity', '>', 0);
+        });
 
         if($request->has('model')) {
             $Tshirt->where('model', '=', $request->input('model'));
@@ -64,6 +65,6 @@ class Tshirt extends Model
             ]);
         }
 
-        return $Tshirt->groupBy('tshirt_id');
+        return $Tshirt;
     }
 }

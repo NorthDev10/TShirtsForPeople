@@ -1,0 +1,17 @@
+export default {
+  title: 'Побудуй футболку своєї мрії!',
+  for_man: 'Чоловіча футболка',
+  for_woman: 'Жіноча футболка',
+	size: 'Розмір',
+  base_color: 'Базовий колір футболки',
+  seam_color: 'Колір шва',
+  collar_color: 'Колір воротника',
+  color_left_sleeve: 'Колір лівого рукава',
+  color_right_sleeve: 'Колір правого рукава',
+  color_seam_left_sleeve: 'Колір шва лівого рукава',
+  color_seam_right_sleeve: 'Колір шва правого рукава',
+  amount: 'Kількість',
+  add_to_cart: 'Додати до кошика',
+  order_total: 'Вартість: {cost} грн',
+  free_shipping: 'Безкоштовна доставка',
+}

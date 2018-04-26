@@ -1,0 +1,18 @@
+.contents-of-the-cart, .cart-checkout {
+  box-shadow: 0 0 3px grey;
+  padding: 7px;
+  margin-bottom: 12px;
+  text-align: left;
+
+  h2 {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    color: #2d2d2d;
+  }
+
+  .row > div {
+    padding-bottom: 10px;
+  }
+}

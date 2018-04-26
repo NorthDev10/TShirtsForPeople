@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App;
+use Config;
 use App\Tshirt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class TshirtController extends Controller
 {
@@ -15,7 +18,25 @@ class TshirtController extends Controller
     
     public function index(Request $request)
     {
-        return Tshirt::filter($request)->paginate(3);
+        App::setLocale($request->input('lang'));
+
+        $tshirts = Tshirt::filter($request)->paginate(1);
+        $tshirts = $tshirts->toArray();
+        $tshirtList = $tshirts['data'];
+        unset($tshirts['data']);
+        $paginate = $tshirts;
+
+        return array_merge([
+                'tshirtList' => $tshirtList,
+                'paginate' => $paginate,
+                'lang' => array_merge(
+                    Lang::get('gender'),
+                    Lang::get('model'),
+                    Lang::get('fabric')
+                ),
+            ],
+            Config::get('settings.tshirt')
+        );
     }
 
     /**

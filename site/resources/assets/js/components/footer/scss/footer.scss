@@ -1,0 +1,135 @@
+@import "~fontawesome-scss/fontAwesome.scss";
+
+footer {
+  border-top: 2px dashed #603814;
+  outline: 7px solid #ff9a00;
+  background: #ff9a00;
+  margin: 15px 0 0;
+  
+  .row {
+    justify-content: center;
+    margin: 10px;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    .menu-quick-links {
+      text-align: center;
+      padding: 0 10px;
+
+      @media screen and (min-width: 768px) {
+        div {
+          text-align: left;
+        }
+      }
+
+      a {
+        color: white;
+        font-size: 20px;
+        opacity: .7;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .our-contacts {
+      $font-size: 24px;
+      text-align: center;
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        text-align: left;
+        padding-left: 10px;
+
+        li {
+          list-style: none;
+  
+          &:before {
+            padding-left: 10px;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      .fa-map-marker:before {
+        content: ' ';
+        @include fa($fa-map-marker, #efefef, $font-size);
+      }
+
+      .fa-phone:before {
+        content: ' ';
+        @include fa($fa-phone, #efefef, $font-size);
+      }
+
+      .fa-envelope:before {
+        content: ' ';
+        @include fa($fa-envelope, #efefef, $font-size);
+      }
+    }
+  
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      $font-size: 32px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+  
+      div {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+        
+        a {
+          margin-right: 20px;
+        }
+
+        a:last-child {
+          margin-right: 4px;
+        }
+      }
+
+      .row {
+        justify-content: space-around;
+      }
+  
+      .fa-facebook {
+        @include fa($fa-facebook, #efefef, $font-size);
+      }
+  
+      .fa-youtube {
+        @include fa($fa-youtube, #efefef, $font-size);
+      }
+  
+      .fa-instagram {
+        @include fa($fa-instagram, #efefef, $font-size);
+      }
+      
+      a {
+        opacity: 0.7;
+      }
+  
+      a:hover {
+        opacity: 1;
+      }
+    }
+
+    @media screen and (min-width: 1136px) {
+      .menu-quick-links {
+        border-right: 1px solid #c37713;
+      }
+
+      .our-contacts {
+        border-left: 1px solid #c37713;
+      }
+    }
+  }
+}

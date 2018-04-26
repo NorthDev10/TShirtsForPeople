@@ -14,17 +14,14 @@ use App\Tshirt;
 |
 */
 
-Route::group(['prefix' => '/v1.0', 'middleware' => 'api'], function () {
-    Route::resource('tshirts', 'TshirtController',
-    ['names' =>
-        [
-            'index' => 'tshirt.index',
-        //    'create' => 'admin.main-articles.create',
-        //    'store' => 'admin.main-articles.store',
-        //    'show' => 'admin.main-articles.show',
-        //    'edit' => 'admin.main-articles.edit',
-        //    'update' => 'admin.main-articles.update',
-        //    'destroy' => 'admin.main-articles.destroy',
-        ]
+Route::group(['prefix' => '/v1.0/', 'middleware' => 'api'], function () {
+    Route::get('tshirts', [
+        'as' => 'tshirt_list',
+        'uses' => 'TshirtController@index'
+    ]);
+
+    Route::get('options', [
+        'as' => 'tshirt_options',
+        'uses' => 'TshirtOptions@getOptions'
     ]);
 });

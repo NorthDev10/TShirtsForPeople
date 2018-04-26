@@ -14,8 +14,6 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
-    ports:
-      - 8080:8080
 
   # The Web Server
   web:

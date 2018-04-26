@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', [
-    'uses' => 'TshirtController@index',
-    'as' => 'admin.ioc.index'
-]);
+Route::get('/{any}', 'SpaController@index')
+  ->where('any', '!=', 'api')
+  ->where('any', '.*');

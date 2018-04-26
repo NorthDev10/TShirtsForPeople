@@ -1,0 +1,105 @@
+.a, .e, .s {
+    fill: none;
+}
+
+.b {
+    fill: #ff9a00;
+}
+
+.c {
+    fill: #ff9a00;
+}
+
+.header-menu {
+    cursor:pointer;
+
+    g path {
+        fill: black;
+    }
+}
+
+.router-link-exact-active > .c {
+    fill: #ffce83 !important;
+}
+
+.header-menu:hover .c {
+    fill:#FCAC4C;
+}
+
+.translate-btn {
+    cursor:pointer;
+
+    rect {
+        fill:#00739b;
+    }
+
+    &:hover rect {
+        fill:#0d8fc7;
+    }
+
+    .st6 {
+        fill: #FFD500;
+    }
+
+    .st7 {
+        fill: #005BBB;
+    }
+}
+
+.d {
+    fill: #007cb2;
+}
+
+.e {
+    stroke: #603813;
+}
+
+.e, .s {
+    stroke-miterlimit: 10;
+}
+
+.e {
+    stroke-dasharray: 7;
+}
+
+.f {
+    fill: #db8926;
+}
+
+.g {
+    fill: #00739b;
+}
+
+.i {
+    fill: #bd3d44;
+}
+
+.j {
+    fill: white;
+}
+
+.l {
+    tspan {
+        fill: white;
+    }
+}
+
+.h {
+    clip-path: url(#a);
+}
+
+.k {
+    fill: #192f5d;
+}
+
+.l {
+    font-size: 18px;
+}
+
+.n {
+    fill: silver;
+}
+
+.ae {
+    fill: #fff;
+}
