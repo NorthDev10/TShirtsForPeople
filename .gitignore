@@ -7,5 +7,5 @@
 /site/Homestead.yaml
 /site/npm-debug.log
 /site/yarn-error.log
-/site/.env
+/site/yarn.lock
 /site/dist

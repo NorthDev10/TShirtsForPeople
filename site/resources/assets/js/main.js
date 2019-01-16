@@ -2,7 +2,6 @@
 import Vue                          from 'vue'
 import VueRouter                    from 'vue-router'
 import MultiLanguage                from 'vue-multilanguage'
-import VueUp                        from 'vueup' // всплывающие сообщения на весь экран
 import Snotify                      from 'vue-snotify' // всплывающие сообщения (toast)
 import VeeValidate, { Validator }   from 'vee-validate'; // валидатор форм
 
@@ -24,7 +23,6 @@ import TshirtPreview         from './components/TshirtPreview.vue'
 
 // встраиваем плагины во Vue
 Vue.use(VueRouter);
-Vue.use(VueUp);
 Vue.use(Snotify);
 Vue.use(VeeValidate);
 Vue.use(MultiLanguage, LanguagePack.getLanguages());

@@ -7,9 +7,9 @@
     <title>TShirts for people</title>
     <meta name=keywords content="">
     <meta name=description content="">
-    @if(env('APP_ENV') == 'production')
+    {{--@if(env('APP_ENV') == 'production')--}}
     <link href="/css/style.css" rel="stylesheet">
-    @endif
+    {{--@endif--}}
 </head>
 <body>
     <div id="app"></div>

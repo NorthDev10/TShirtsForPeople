@@ -36,23 +36,10 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=tshirts
-      - MYSQL_USER=Dmitry
+      - MYSQL_USER=dmitry
       - MYSQL_PASSWORD=secret
     ports:
         - "33062:3306"
-        
-  # The phpmyadmin
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin-tshirts
-    ports:
-      - 8182:80
-    environment:
-      - MYSQL_USERNAME=root
-      - MYSQL_ROOT_PASSWORD=secret
-      - PMA_HOST=database
-    links:
-      - database:mysql
       
 volumes:
   dbdata:
